@@ -1,5 +1,6 @@
 #pragma once
 #include <vector>
+#include <memory>
 #include "Smalltalk.h"
 
 class Smalltalk_American :

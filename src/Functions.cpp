@@ -1,5 +1,7 @@
 #include "../includes/Functions.h"
 #include "../includes/constants.h"
+#include "../includes/Smalltalk.h"
+#include <vector>
 
 /**
  * create a vector with appropriate numbers of Smalltalk_Brit,Smalltalk_American and ST_American_DonutEnthusiest
@@ -11,9 +13,20 @@
  * \param numbAmericanDonutEnthusiest " American Donut Enthusiest "
  */
 void getPeople(std::vector<Smalltalk*> &mv,int numBrit, int numAmerican, int numbAmericanDonutEnthusiest){
-	numBrit++;
-	numAmerican++;
-	numbAmericanDonutEnthusiest++;
+
+	//add a few classes
+	for (int i=0;i<sizeof(Smalltalk);i++)
+		mv.push_back(new Smalltalk(i));
+
+	//talk
+	for (int i=0;i<10;i++)
+		mv[i]->saySomething();
+
+	//time to go delete what the pointers point to and let the vector
+	//manage the pointers themselvescause vector will not delete, gotta be a better way
+	for (std::vector<Smalltalk*>:: iterator myiter = mv.begin(); myiter != mv.end(); ++myiter)
+		delete (*myiter);
+
 }
 
 /**
@@ -24,4 +37,5 @@ void getPeople(std::vector<Smalltalk*> &mv,int numBrit, int numAmerican, int num
  * \param mv
  */
 void clearVector(std::vector<Smalltalk*> &mv){
+
 }

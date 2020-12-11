@@ -1,6 +1,4 @@
 #include "../includes/ST_American_DonutEnthusiest.h"
-#include "../includes/Functions.h"
-#include "../includes/constants.h"
 
 ST_American_DonutEnthusiest::ST_American_DonutEnthusiest(int i){
 

@@ -1,18 +1,11 @@
-#include <string>
-#include <vector>
-#include <memory>
 #include "../includes/Smalltalk.h"
 #include "../includes/Functions.h"
 #include "../includes/constants.h"
 
-
-
 //derived class will set Nationality, iPerson. iPerson is just a counter used to distinguish between objects of the same type
-Smalltalk::Smalltalk(std::string myNationality,int iPerson):nationality(myNationality)
+Smalltalk::Smalltalk(std::string myNationality,int iPerson):nationality(myNationality), iPerson(iPerson)
 {
-	this->iPerson = iPerson;
 	this->current_phrase = current_phrase;
-	iPerson++;
 }
 
 Smalltalk::~Smalltalk(void){
@@ -24,6 +17,9 @@ Smalltalk::~Smalltalk(void){
 //for instance the following string comes from an American instance, the 10th iPerson and it is printing AMERICAN_PHRASE_2
 //AMERICAN 10:Why yes, I would like to supersize that
 std::string Smalltalk::saySomething(){
-
 }
 
+//Abstract Base Class (ABC), implement in derived classes
+void Smalltalk::populatePhrases(){
+
+}
